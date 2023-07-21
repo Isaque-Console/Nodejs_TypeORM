@@ -31,9 +31,20 @@ Esse projeto é uma api que simula um sistema para gerenciar usuários, expondo 
 
 - Ter instalado em sua máquina o docker
 
-### Como rodar o projeto
+### Como rodar o projeto (usando docker)
 - Abra o terminal dentro da pasta do projeto.
 - Digite o seguinte comando no terminal: `$ docker run -p 3000:3000 converte_me_test `
+
+### Como rodar o projeto (sem usar o docker)
+- Crie as seguintes variáveis de ambiente em um arquivo .env
+	MYSQL_HOST=converte-me-test-instance-1.cm2ev0vm4g3w.sa-east-1.rds.amazonaws.com
+	MYSQL_PORT=3306
+	MYSQL_USERNAME=admin
+	MYSQL_PASSWORD=vRnW>MlRt_P_+iX1N00E!LdKqa<D
+	JWT_SECRET_KEY=fb645857-7a93-48dd-91c0-001fa9d8f026
+- Abra o terminal dentro da pasta do projeto.
+- Digite o seguinte comando no terminal: `$ npm install`
+- Entao, digite este outro comando no terminal: `$ npm run dev`
 
 ### Postman collection (é possível importar essa collection no seu postman)
 
