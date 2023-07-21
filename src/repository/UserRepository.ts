@@ -6,6 +6,7 @@ export interface IUserRepository {
     getUserById(userId: string): Promise<any>;
     getUserByUsername(username: string): Promise<User | undefined>;
     createUser(props: UserProps, id?: string): Promise<User | undefined>;
+    updateUserById(userId: string, updatedDatas: UserProps): Promise<any>;
     deleteUserById(userId: string): Promise<User | undefined>;
 }
 
@@ -27,6 +28,11 @@ export class UserRepository implements IUserRepository {
         const result: User | undefined = await queries.createItem(user, await mySqlClient());
         if(!result) throw new Error("Erro ao criar usuário no banco de dados");
         return result;
+    }
+
+    async updateUserById(userId: string, updatedDatas: UserProps): Promise<any> {
+        const queries: MysqlQueries = new MysqlQueries();
+        return await queries.updateItemById(userId, updatedDatas, await mySqlClient());
     }
 
     async deleteUserById(userId: string): Promise<any> {
