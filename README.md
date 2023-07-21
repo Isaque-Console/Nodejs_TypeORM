@@ -35,7 +35,7 @@ Esse projeto é uma api que simula um sistema para gerenciar usuários, expondo 
 - Abra o terminal dentro da pasta do projeto.
 - Digite o seguinte comando no terminal: `$ docker run -p 3000:3000 converte_me_test `
 
-### Postman collection
+### Postman collection (é possível importar essa collection no seu postman)
 
    {
 	"info": {
